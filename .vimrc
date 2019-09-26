@@ -2,12 +2,12 @@ set nocompatible
 filetype off
 
 " Basic Setup
+set spelllang=en_gb
 set splitbelow
 set splitright
 set encoding=utf-8
 " set clipboard=unnamed "Other clipboards than Vims
 set number
-set relativenumber
 set t_Co=256
 
 " Language specific settings
@@ -28,19 +28,19 @@ let python_higlight_all = 1
 syntax on
 
 " set the runtime path to include Vundle and init
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'altercation/vim-colors-solarized'
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
+"Plugin 'VundleVim/Vundle.vim'
+"Plugin 'vim-scripts/indentpython.vim'
+"Plugin 'altercation/vim-colors-solarized'
 
 
 " Needs VIM 7.4.1578
-Bundle 'Valloric/YouCompleteMe'
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-call vundle#end()
-filetype plugin indent on
+"Bundle 'Valloric/YouCompleteMe'
+"let g:ycm_autoclose_preview_window_after_completion=1
+"map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"call vundle#end()
+"filetype plugin indent on
 
 
 set background=dark
