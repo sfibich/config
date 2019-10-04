@@ -3,12 +3,12 @@ filetype off
 
 " Basic Setup
 set spelllang=en_gb
-set splitbelow
-set splitright
 set encoding=utf-8
 " set clipboard=unnamed "Other clipboards than Vims
 set number
 set t_Co=256
+syntax on
+
 
 " Language specific settings
 highlight BadWhitespace ctermbg=red guibg=darkred
@@ -25,12 +25,13 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix
 
 let python_higlight_all = 1
-syntax on
 
 " set the runtime path to include Vundle and init
-"set rtp+=~/.vim/bundle/Vundle.vim
-"call vundle#begin()
-"Plugin 'VundleVim/Vundle.vim'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+
+" Plugins 
 "Plugin 'vim-scripts/indentpython.vim'
 "Plugin 'altercation/vim-colors-solarized'
 
@@ -39,10 +40,10 @@ syntax on
 "Bundle 'Valloric/YouCompleteMe'
 "let g:ycm_autoclose_preview_window_after_completion=1
 "map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-"call vundle#end()
-"filetype plugin indent on
+call vundle#end()
+filetype plugin indent on
 
 
-set background=dark
-"colorscheme solarized
-  
+set background=light
+colo elflord  
+
