@@ -1,18 +1,25 @@
+" Basic Setup
 set nocompatible
 filetype off
-
-" Basic Setup
 set spelllang=en_gb
 set encoding=utf-8
 " set clipboard=unnamed "Other clipboards than Vims
 set number
 set t_Co=256
 syntax on
-
+set shell=/bin/bash
+set background=light
+colo elflord  
+set tabstop=4
+set softtabstop=4
 
 " Language specific settings
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+"PowerShell
+au BufNewFile,BufRead *.ps1,*.psc1 setf ps1
+ 
 
 "Python
 au BufNewFile,BufRead *.py
@@ -30,6 +37,7 @@ let python_higlight_all = 1
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'pprovost/vim-ps1'
 
 " Plugins 
 "Plugin 'vim-scripts/indentpython.vim'
@@ -44,6 +52,4 @@ call vundle#end()
 filetype plugin indent on
 
 
-set background=light
-colo elflord  
 
