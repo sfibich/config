@@ -26,7 +26,7 @@ au BufNewFile,BufRead *.py
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
-    \ set textwidth=79 |
+    \ set textwidth=160 |
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix
@@ -39,16 +39,14 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'pprovost/vim-ps1'
 
-" Plugins 
-"Plugin 'vim-scripts/indentpython.vim'
-"Plugin 'altercation/vim-colors-solarized'
-
 
 " Needs VIM 7.4.1578
-"Bundle 'Valloric/YouCompleteMe'
-"let g:ycm_autoclose_preview_window_after_completion=1
-"map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+Bundle 'Valloric/YouCompleteMe'
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 call vundle#end()
+
 filetype plugin indent on
 
 
