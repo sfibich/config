@@ -10,13 +10,38 @@ colo elflord
 set tabstop=4
 set softtabstop=4
 
+" Statusline
+set laststatus=2
+function! GitBranch()
+	return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! StatuslineGit()
+	let l:branchname = GitBranch()
+	return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
+
+set statusline=
+set statusline+=%#PmenuSel#
+set statusline+=%{StatuslineGit()}
+set statusline+=%#LineNr#
+set statusline+=\ %f
+set statusline+=%m\
+set statusline+=%=
+set statusline+=%#CursorColumn#
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+set statusline+=\ 
+
 " Language specific settings
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 " PowerShell
 au BufNewFile,BufRead *.ps1,*.psc1 setf ps1
- 
 
 " Python
 au BufNewFile,BufRead *.py
@@ -30,7 +55,6 @@ au BufNewFile,BufRead *.py
 
 let python_higlight_all = 1
 
-
 " Code Folding
 set foldmethod=indent
 set foldlevel=99
@@ -41,7 +65,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'pprovost/vim-ps1'
-
 
 " Needs VIM 7.4.1578
 Bundle 'Valloric/YouCompleteMe'
