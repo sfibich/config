@@ -4,7 +4,7 @@ filetype off
 set spelllang=en_us
 set encoding=utf-8
 set number
-syntax on
+syntax on 
 set shell=/bin/bash
 colo elflord  
 set tabstop=4
@@ -22,13 +22,13 @@ function! StatuslineGit()
 endfunction
 
 set statusline=
-set statusline+=%#PmenuSel#
+set statusline+=%#TabLineSel#
 set statusline+=%{StatuslineGit()}
-set statusline+=%#LineNr#
+set statusline+=%#SpecialKey#
 set statusline+=\ %f
 set statusline+=%m\
 set statusline+=%=
-set statusline+=%#CursorColumn#
+set statusline+=%#StatusLine#
 set statusline+=\ %y
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
 set statusline+=\[%{&fileformat}\]
@@ -74,6 +74,4 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 call vundle#end()
 
 filetype plugin indent on
-
-
 
