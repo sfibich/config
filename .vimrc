@@ -1,6 +1,6 @@
 " Basic Setup
 set t_co=256
-#colo jellybeans
+" colo jellybeans
 colo slate
 set nocompatible
 filetype off
@@ -84,7 +84,7 @@ call plug#begin('~/.vim/autoload')
 
 Plug 'pprovost/vim-ps1'
 Plug 'hashivim/vim-terraform'
-Plug 'Valloric/YouCompleteMe'
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py'}
 
 call plug#end()
 
