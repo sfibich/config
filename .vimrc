@@ -74,6 +74,9 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix
 
 let python_higlight_all = 1
+" Black
+autocmd BufWritePre *.py execute ':Black'
+
 
 " Code Folding
 set foldmethod=indent
@@ -85,6 +88,8 @@ call plug#begin('~/.vim/autoload')
 Plug 'pprovost/vim-ps1'
 Plug 'hashivim/vim-terraform'
 Plug 'ycm-core/YouCompleteMe', { 'do': './install.py'}
+Plug 'altercation/vim-colors-solarized'
+Plug 'psf/black'
 
 call plug#end()
 
