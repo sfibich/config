@@ -77,6 +77,8 @@ let python_higlight_all = 1
 " Black
 autocmd BufWritePre *.py execute ':Black'
 
+" Terraform
+let terraform_fmt_on_save=1
 
 " Code Folding
 set foldmethod=indent
